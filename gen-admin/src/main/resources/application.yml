@@ -70,9 +70,9 @@ mybatis-plus:
 spring:
   profiles: dev
   datasource:
-      url: jdbc:mysql://localhost:3307/easycode?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+      url: jdbc:mysql://localhost:3306/gen?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
       username: root
-      password: 123456
+      password: king1992
       filters: log4j,wall,mergeStat
 
 logging:
@@ -80,7 +80,7 @@ logging:
   level.cn.afterturn: debug
   level.org.springframework: info
   level.org.apache.ibatis: debug
-  path: /home/logs/gencode/
+#  path: /home/logs/gencode/
   file: gencode.log
 
 beetl:
@@ -98,27 +98,27 @@ guns:
 ##########################################################
 ###################  正式环境的profile  ###################
 ##########################################################
-spring:
-  profiles: pro
-  datasource:
-      url: jdbc:mysql://127.0.0.1:3308/easycode?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-      username: easycode
-      password: easycode
-      filters: log4j,wall,mergeStat
-
-logging:
-  level.root: warn
-  path: /home/logs/gencode/
-  file: gencode.log
-
-beetl:
-  resource-auto-check: false #是否检测文件变化,开发用true合适，但线上要改为false
-mybatis-plus:
-  global-config:
-    refresh-mapper: false
-guns:
-  share-open: true #是否开启分享,自己用可以关闭(true/false)
-  gen-local: false #是否允许在本地生成代码
+#spring:
+#  profiles: pro
+#  datasource:
+#      url: jdbc:mysql://127.0.0.1:3306/gen?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+#      username: root
+#      password: king1992
+#      filters: log4j,wall,mergeStat
+#
+#logging:
+#  level.root: warn
+##  path: /home/logs/gencode/
+#  file: gencode.log
+#
+#beetl:
+#  resource-auto-check: false #是否检测文件变化,开发用true合适，但线上要改为false
+#mybatis-plus:
+#  global-config:
+#    refresh-mapper: false
+#guns:
+#  share-open: true #是否开启分享,自己用可以关闭(true/false)
+#  gen-local: false #是否允许在本地生成代码
 ###################  项目启动端口  ###################
-server:
-  port: 8080
+#server:
+#  port: 8080
