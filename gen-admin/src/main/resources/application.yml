@@ -73,7 +73,12 @@ spring:
       url: jdbc:mysql://localhost:3306/gen?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
       username: root
       password: king1992
+      url: jdbc:mysql://localhost:3306/gen?useUnicode=true&characterEncoding=UTF8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC
+      username: root
+      password: root
       filters: log4j,wall,mergeStat
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
 
 logging:
   level.root: info
